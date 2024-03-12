@@ -13,8 +13,8 @@ function CartItem(props: Props) {
   return (
     <>
       <div className="flex gap-10 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] px-10 py-2 rounded-lg">
-        <div className=" min-h-24 min-w-24 relative block border">
-          <Image fill alt={props.title} src={props.image} />
+        <div className=" min-h-24 min-w-24 relative block " >
+          <Image fill alt={props.title} src={props.image} unoptimized />
         </div>
 
         <div className="content max-w-80 space-y-2"><h5 className=" font-semibold">{props.title}</h5>

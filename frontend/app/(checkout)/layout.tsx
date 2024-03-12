@@ -1,4 +1,4 @@
-import Steps from "@/components/ui/steps/Steps";
+import Steps from "@/Components/UI/Steps/Steps";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,8 +11,12 @@ export default function CheckoutLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
-      <Steps />
-      <main className=" px-40">{children}</main>
+      <div className=" px-40">
+        <nav className=" mt-10 flex justify-center items-center mb-10">
+          <Steps />
+        </nav>
+        <main>{children}</main>
+      </div>
     </>
   );
 }

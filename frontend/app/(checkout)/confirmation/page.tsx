@@ -77,7 +77,7 @@ export default function Page({}: Props) {
                 </button>
               </div>
               <p className="font-semibold text-lg text-black py-6">
-                Total Price: <span className="text-indigo-600"> $ {totalCost}</span>
+                Total Price: <span className="text-indigo-600"> $ {totalCost.toFixed(2)}</span>
               </p>
             </div>
           </div>

@@ -1,3 +1,6 @@
+import {z} from 'zod';
+import { cardSchema } from './schema';
+
 export type Product = {
     id: number;
     title: string;
@@ -13,4 +16,5 @@ export type StoreData = {
     paymentMethods: PaymentMethod[];
   };
   
-  
+ 
+export type CardSchema = z.infer<typeof cardSchema >

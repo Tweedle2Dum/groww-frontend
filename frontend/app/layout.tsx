@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <AppProvider>
-        <body className={font.className + ' px-20 pb-20'}>{children}</body>
+        <body className={font.className + ' px-4 md:px-20 md:pb-20'}>{children}</body>
       </AppProvider>
     </html>
   );

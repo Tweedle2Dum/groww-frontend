@@ -24,7 +24,7 @@ function Summary(props: Props) {
                 x{product.quantity}
               </h6>
               <h6 className=" flex-[0.25] font-extralight">
-                ${product.quantity * product.price}
+                ${(product.quantity * product.price).toFixed(2)}
               </h6>
             </div>
           </>
@@ -32,7 +32,7 @@ function Summary(props: Props) {
         <Divider className="" label="" />
         <div className="flex justify-between">
           <h6 className=" font-bold">Total Price</h6>
-          <h6 className=" text-sky-500 font-bold">$ {totalCost}</h6>
+          <h6 className=" text-sky-500 font-bold">$ {totalCost.toFixed(2)}</h6>
         </div>
       </div>
     </main>

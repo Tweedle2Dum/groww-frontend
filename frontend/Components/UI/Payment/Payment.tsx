@@ -16,9 +16,11 @@ function Payment(props: Props) {
           </label>
           <div className="relative">
             <input
+              style={{ color: "black" }}
               type="text"
               id="card-number-input"
-              className="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pe-10 p-2.5 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"              placeholder="Card Number"
+              className="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pe-10 p-2.5 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Card Number"
               pattern="^4[0-9]{12}(?:[0-9]{3})?$"
               required
             />
@@ -40,6 +42,7 @@ function Payment(props: Props) {
                 Card expiration date:
               </label>
               <input
+                style={{ color: "black" }}
                 datepicker-htmlFormat="mm/yy"
                 id="card-expiration-input"
                 type="text"
@@ -53,6 +56,7 @@ function Payment(props: Props) {
                 Card CVV code:
               </label>
               <input
+                style={{ color: "black" }}
                 type="number"
                 id="cvv-input"
                 aria-describedby="helper-text-explanation"
@@ -72,6 +76,7 @@ function Payment(props: Props) {
         <div className="relative ">
           <div className=" flex gap-4 items-center">
             <input
+              style={{ color: "black" }}
               type="text"
               id="card-number-input"
               className=" max-w-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pe-10 p-2.5  dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"

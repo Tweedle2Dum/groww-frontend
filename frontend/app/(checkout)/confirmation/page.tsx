@@ -21,7 +21,7 @@ export default function Page({}: Props) {
 
   return (
     <>
-      <section className="py-24 relative">
+      <section className="py-8 sm:py-24 relative">
         <div className="w-full max-w-7xl px-4 md:px-5 lg-6 mx-auto">
           <h2 className="font-manrope font-bold text-4xl leading-10 text-black text-center">
             Payment Successful

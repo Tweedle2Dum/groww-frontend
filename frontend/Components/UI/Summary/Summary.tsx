@@ -11,7 +11,7 @@ function Summary(props: Props) {
     return acc + product.quantity * product.price;
   }, 0);
   return (
-    <main className=" flex-wrap justify-between  rounded-lg">
+    <main className=" flex-wrap justify-between  rounded-lg text-md">
       <div className="cart space-y-10 pb-4">
         {props.products.map((product) => (
           <>

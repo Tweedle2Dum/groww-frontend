@@ -22,7 +22,7 @@ export default function Page() {
       <h1 className=" text-xl sm:text-2xl md:text-3xl font-semibold">Choose Payment Method</h1>
         <Payment paymentMethods={cart.data.paymentMethods} />
       </div>
-      <div className="summary  px-8 py-4 flex-1 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]  sticky rounded-lg ">
+      <div className="summary  px-8 py-4 flex-1 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]  sticky rounded-lg max-w-[400px] ">
         <h1 className="hidden sm:block  text-xl sm:text-2xl md:text-3xl font-semibold">Summary</h1>
         <Divider className=" hidden sm:block my-8" label={"Item Name"} />
         <Summary products={cart.data.products} />

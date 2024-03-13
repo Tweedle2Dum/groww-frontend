@@ -24,7 +24,7 @@ export default function Page() {
   if (cart.data.products.length === 0) {
     return (
       <>
-        <div className=" my-40">
+        <div className=" my-10 sm:my-40">
           <EmptyCart />
         </div>
       </>

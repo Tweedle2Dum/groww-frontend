@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import useGetCart from "@/Components/Hooks/APIs/Cart/useGetCart";
 import CartItem from "@/Components/UI/CartItem/CartItem";
@@ -7,17 +7,19 @@ import Loader from "@/Components/UI/Loader/Loader";
 type Props = {};
 
 export default function Page({}: Props) {
-
-  const cart = useGetCart()
+  const cart = useGetCart();
   if (cart.isLoading) {
-    return <><Loader alignment="text-center"/></>;
+    return (
+      <>
+        <Loader alignment="text-center" />
+      </>
+    );
   }
   if (!cart.data) return null;
 
   const totalCost = cart.data.products.reduce((acc, product) => {
     return acc + product.quantity * product.price;
   }, 0);
-
 
   return (
     <>
@@ -27,8 +29,7 @@ export default function Page({}: Props) {
             Payment Successful
           </h2>
           <p className="mt-4 font-normal text-lg leading-8 text-gray-500 mb-11 text-center">
-            Thanks for making a purchase you can check the order summary 
-            below
+            Thanks for making a purchase you can check the order summary below
           </p>
           <div className="main-box border border-gray-200 rounded-xl pt-6 max-w-xl max-lg:mx-auto lg:max-w-full">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between px-6 pb-6 border-b border-gray-200">
@@ -50,10 +51,11 @@ export default function Page({}: Props) {
               </button>
             </div>
             <div className="w-full px-3 min-[400px]:px-6 space-y-6 pb-4">
-            {cart.data.products.map((product)=>(<>
-              <CartItem {...product} key={product.id}/>
-            </>))}
-
+              {cart.data.products.map((product) => (
+                <>
+                  <CartItem {...product} key={product.id} />
+                </>
+              ))}
             </div>
             <div className="w-full border-t border-gray-200 px-6 flex flex-col lg:flex-row items-center justify-between ">
               <div className="flex flex-col sm:flex-row items-center max-lg:border-b border-gray-200">
@@ -77,7 +79,11 @@ export default function Page({}: Props) {
                 </button>
               </div>
               <p className="font-semibold text-lg text-black py-6">
-                Total Price: <span className="text-indigo-600"> $ {totalCost.toFixed(2)}</span>
+                Total Price:{" "}
+                <span className="text-indigo-600">
+                  {" "}
+                  $ {totalCost.toFixed(2)}
+                </span>
               </p>
             </div>
           </div>

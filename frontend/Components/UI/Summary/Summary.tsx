@@ -12,7 +12,7 @@ function Summary(props: Props) {
   }, 0);
   return (
     <main className=" flex-wrap justify-between  rounded-lg text-md">
-      <div className="cart space-y-10 pb-4">
+      <div className="cart max-w-sm space-y-10 pb-4 md:w-full">
         {props.products.map((product) => (
           <>
             <div

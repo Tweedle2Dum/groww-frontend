@@ -1,5 +1,5 @@
 'use client'
-import { Product } from "@/util";
+import { Product } from "@/Types/types";
 import React from "react";
 import Divider from "../Divider/Divider";
 type Props = {

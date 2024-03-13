@@ -1,47 +1,11 @@
 "use client";
 import Divider from "@/Components/UI/Divider/Divider";
 import CartItem from "@/Components/UI/CartItem/CartItem";
-import { StoreData } from "@/util";
 import Summary from "@/Components/UI/Summary/Summary";
 import Button from "@/Components/UI/Button/Button";
 import useGetCart from "@/Components/Hooks/APIs/Cart/useGetCart";
 import { useRouter } from "next/navigation";
 import Loader from "@/Components/UI/Loader/Loader";
-
-const store: StoreData = {
-  products: [
-    {
-      id: 6,
-      title: "Solid Gold Petite Micropave",
-      price: 168,
-      image: "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
-      quantity: 10,
-    },
-    {
-      id: 8,
-      title: "Pierced Owl Rose Gold Plated Stainless Steel Double",
-      price: 10.99,
-      image: "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
-      quantity: 4,
-    },
-    {
-      id: 18,
-      title: "MBJ Women's Solid Short Sleeve Boat Neck V",
-      price: 9.85,
-      image: "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
-      quantity: 10,
-    },
-    {
-      id: 16,
-      title:
-        "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
-      price: 29.95,
-      image: "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
-      quantity: 6,
-    },
-  ],
-  paymentMethods: ["UPI", "CARDS"],
-};
 
 export default function Page() {
   const cart = useGetCart();

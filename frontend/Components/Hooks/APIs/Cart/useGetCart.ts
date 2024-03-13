@@ -1,6 +1,6 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
-import { StoreData } from "@/util";
+import { StoreData } from "@/Types/types";
 async function getCart(): Promise<StoreData> {
   const response = await fetch(
     "https://groww-intern-assignment.vercel.app/v1/api/order-details",

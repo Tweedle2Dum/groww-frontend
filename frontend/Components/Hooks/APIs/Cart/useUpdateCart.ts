@@ -1,4 +1,4 @@
-import { StoreData } from "@/util";
+import { StoreData } from "@/Types/types";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 async function updateCart() :Promise <StoreData> {
     // Implementation of updating user cart

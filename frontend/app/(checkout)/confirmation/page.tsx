@@ -2,6 +2,7 @@
 
 import useGetCart from "@/Components/Hooks/APIs/Cart/useGetCart";
 import CartItem from "@/Components/UI/CartItem/CartItem";
+import Loader from "@/Components/UI/Loader/Loader";
 
 type Props = {};
 
@@ -9,7 +10,7 @@ export default function Page({}: Props) {
 
   const cart = useGetCart()
   if (cart.isLoading) {
-    return <>Loading</>;
+    return <><Loader alignment="text-center"/></>;
   }
   if (!cart.data) return null;
 

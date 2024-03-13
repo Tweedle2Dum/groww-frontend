@@ -5,13 +5,14 @@ import Divider from "@/Components/UI/Divider/Divider";
 import Summary from "@/Components/UI/Summary/Summary";
 import Payment from "@/Components/UI/Payment/Payment";
 import { useRouter } from "next/navigation";
+import Loader from "@/Components/UI/Loader/Loader";
 
 export default function Page() {
   const cart = useGetCart();
   const router = useRouter();
 
   if (cart.isLoading) {
-    return <>Loading</>;
+    return <><Loader alignment="text-center"/></>;
   }
   if (!cart.data) return null;
 

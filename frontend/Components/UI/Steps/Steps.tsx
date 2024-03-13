@@ -4,32 +4,26 @@ type Props = {};
 
 function Steps({}: Props) {
   return (
-    <ol className="  flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
-      <li className="flex md:w-full items-center text-blue-600 dark:text-blue-500 sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
-        <span className="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-          <svg
-            className="w-3.5 h-3.5 sm:w-4 sm:h-4 me-2.5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-          </svg>
-          Review <span className="hidden sm:inline-flex sm:ms-2">Order</span>
-        </span>
-      </li>
-      <li className="flex md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
-        <span className="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-          <span className="me-2">2</span>
-          Payment <span className="hidden sm:inline-flex sm:ms-2">Method</span>
-        </span>
-      </li>
-      <li className="flex items-center">
-        <span className="me-2">3</span>
-        Confirmation
-      </li>
-    </ol>
+    <ol className="lg:flex items-center w-full space-y-4 lg:space-y-0  ">
+ 	<li className="  flex-1 ">
+ 		<a className="flex items-center font-medium px-4 py-5 w-full rounded-lg bg-indigo-50 justify-center">
+ 			<span className="w-8 h-8 bg-indigo-600  rounded-full flex justify-center items-center mr-3 text-sm text-white lg:w-10 lg:h-10">01</span>
+ 			<h4 className="text-base  text-indigo-600">Review Order</h4>
+ 		</a>
+ 	</li>
+ 	<li className="  flex-1 ">
+ 		<a className="flex items-center font-medium px-4 py-5 w-full justify-center">
+ 			<span className="w-8 h-8 bg-indigo-50 border border-indigo-600 rounded-full flex justify-center items-center mr-3 text-sm text-indigo-600 lg:w-10 lg:h-10">02</span>
+ 			<h4 className="text-base  text-gray-900">Choose Payment Method</h4>
+ 		</a>
+ 	</li>
+ 	<li className=" flex-1">
+ 		<a className="flex items-center font-medium px-4 py-5 w-full justify-center">
+ 			<span className="w-8 h-8 bg-gray-50 border border-gray-200 rounded-full flex justify-center items-center mr-3 text-sm  lg:w-10 lg:h-10">03</span>
+ 			<h4 className="text-base  text-gray-900">Confirmation</h4>
+ 		</a>
+ 	</li>
+ </ol>
   );
 }
 

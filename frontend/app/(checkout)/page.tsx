@@ -6,6 +6,7 @@ import Summary from "@/Components/UI/Summary/Summary";
 import Button from "@/Components/UI/Button/Button";
 import useGetCart from "@/Components/Hooks/APIs/Cart/useGetCart";
 import { useRouter } from "next/navigation";
+import Loader from "@/Components/UI/Loader/Loader";
 
 const store: StoreData = {
   products: [
@@ -47,7 +48,7 @@ export default function Page() {
   const router = useRouter();
 
   if (cart.isLoading) {
-    return <>Loading</>;
+    return <><Loader alignment="text-center"/></>;
   }
   if (!cart.data) return null;
   return (

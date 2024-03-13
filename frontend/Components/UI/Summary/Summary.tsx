@@ -12,11 +12,11 @@ function Summary(props: Props) {
   }, 0);
   return (
     <main className=" flex-wrap justify-between  rounded-lg text-md">
-      <div className="cart max-w-sm space-y-10 pb-4 md:w-full">
+      <div className=" cart max-w-sm space-y-10 pb-4 md:w-full">
         {props.products.map((product) => (
           <>
             <div
-              className=" text-base text-pretty flex w-full gap-6 justify-between items-center"
+              className=" hidden text-base text-pretty sm:flex w-full gap-6 justify-between items-center"
               key={product.id}
             >
               <h6 className="flex-[0.5] font-extralight">{product.title}</h6>
@@ -29,7 +29,7 @@ function Summary(props: Props) {
             </div>
           </>
         ))}
-        <Divider className="" label="" />
+        <Divider className="hidden sm:block" label="" />
         <div className="flex justify-between">
           <h6 className=" font-bold">Total Price</h6>
           <h6 className=" text-sky-500 font-bold">$ {totalCost.toFixed(2)}</h6>

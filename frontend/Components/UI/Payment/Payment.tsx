@@ -8,13 +8,13 @@ type Props = {
 function Payment(props: Props) {
   return (
     <main>
-      <div className="cards space-y-6">
+      <div className="cards space-y-3">
         <h3 className=" text-xl font-extralight">Debit/Credit Card</h3>
-        <form className="max-w-sm">
-          <label htmlFor="card-number-input" className="sr-only">
+        <form className=" max-w-4xl flex items-center gap-4  flex-wrap">
+          <label htmlFor="card-number-input " className="sr-only">
             Card number:
           </label>
-          <div className="relative">
+          <div className="relative flex-1 min-w-[250px]">
             <input
               style={{ color: "black" }}
               type="text"
@@ -25,7 +25,7 @@ function Payment(props: Props) {
               required
             />
           </div>
-          <div className="grid grid-cols-3 gap-4 my-4">
+          <div className="flex gap-4 my-4 flex-wrap">
             <div className="relative max-w-sm col-span-2">
               <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                 <svg
@@ -46,12 +46,12 @@ function Payment(props: Props) {
                 datepicker-htmlFormat="mm/yy"
                 id="card-expiration-input"
                 type="text"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className=" sm:w-[200px] flex-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  ps-10 p-2.5  dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Expiry MM/YY"
                 required
               />
             </div>
-            <div className="col-span-1">
+            <div className="  sm:min-w-[100px] sm:max-w-[100px] flex-1">
               <label htmlFor="cvv-input" className="sr-only">
                 Card CVV code:
               </label>
@@ -68,7 +68,7 @@ function Payment(props: Props) {
           </div>
         </form>
       </div>
-      <div className="upi space-y-6">
+      <div className="upi space-y-3">
         <h3 className=" text-xl text-slate-700">UPI</h3>
         <label htmlFor="card-number-input" className="sr-only">
           Enter your UPI ID :

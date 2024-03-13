@@ -18,8 +18,7 @@ function Payment(props: Props) {
             <input
               type="text"
               id="card-number-input"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pe-10 p-2.5  dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Card Number"
+              className="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pe-10 p-2.5 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"              placeholder="Card Number"
               pattern="^4[0-9]{12}(?:[0-9]{3})?$"
               required
             />

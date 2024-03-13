@@ -16,7 +16,7 @@ function Summary(props: Props) {
         {props.products.map((product) => (
           <>
             <div
-              className=" text-sm flex w-full gap-6 justify-between items-center"
+              className=" text-base text-pretty flex w-full gap-6 justify-between items-center"
               key={product.id}
             >
               <h6 className="flex-[0.5] font-extralight">{product.title}</h6>

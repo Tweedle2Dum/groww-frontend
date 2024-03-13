@@ -42,7 +42,7 @@ const store: StoreData = {
   paymentMethods: ["UPI", "CARDS"],
 };
 
-function page() {
+export default function Page() {
   const cart = useGetCart();
   const router = useRouter();
 
@@ -77,4 +77,3 @@ function page() {
   );
 }
 
-export default page;

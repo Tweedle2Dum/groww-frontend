@@ -6,7 +6,7 @@ import Summary from "@/Components/UI/Summary/Summary";
 import Payment from "@/Components/UI/Payment/Payment";
 import { useRouter } from "next/navigation";
 
-function page() {
+export default function Page() {
   const cart = useGetCart();
   const router = useRouter();
 
@@ -36,4 +36,3 @@ function page() {
   );
 }
 
-export default page;

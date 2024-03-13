@@ -5,7 +5,7 @@ import CartItem from "@/Components/UI/CartItem/CartItem";
 
 type Props = {};
 
-export default function page({}: Props) {
+export default function Page({}: Props) {
 
   const cart = useGetCart()
   if (cart.isLoading) {

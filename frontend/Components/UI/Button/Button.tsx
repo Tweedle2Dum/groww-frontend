@@ -19,7 +19,7 @@ function Button(props: Props) {
       {...rest}
       type="button"
       style={buttonStyle}
-      className="w-full font-bold text-white bg-blue-700 hover:bg-blue-800 focus:outline-none rounded-full text-sm px-5 py-2.5 text-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      className="w-full font-bold text-white bg-indigo-600 hover:bg-indigo-800 focus:outline-none rounded-full text-sm px-5 py-2.5 text-center me-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
 /*       style={{color:theme.theme["--primary"],background:theme.theme["--background"]}}
  */    >
       {content}

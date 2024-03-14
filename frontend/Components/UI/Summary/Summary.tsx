@@ -12,7 +12,7 @@ function Summary(props: Props) {
   }, 0);
 
   return (
-    <main className="flex-wrap justify-between rounded-lg text-md">
+    <main className=" hidden sm:block flex-wrap justify-between rounded-lg text-md">
       <div className="cart max-w-sm space-y-10 pb-4 md:w-full">
         {props.products.map((product) => (
           <div
@@ -20,7 +20,7 @@ function Summary(props: Props) {
             key={product.id}
           >
             <h6 className="flex-[0.5] font-extralight">{product.title}</h6>
-            <h6 className="flex-[0.25] font-extralight text-center text-sky-500">
+            <h6 className="flex-[0.25] font-extralight text-center text-indigo-500">
               x{product.quantity}
             </h6>
             <h6 className="flex-[0.25] font-extralight">
@@ -29,9 +29,9 @@ function Summary(props: Props) {
           </div>
         ))}
         <Divider className="hidden sm:block" label="" />
-        <div className="flex justify-between">
+        <div className=" hidden sm:flex justify-between">
           <h6 className="font-bold">Total Price</h6>
-          <h6 className="text-sky-500 font-bold">$ {totalCost.toFixed(2)}</h6>
+          <h6 className="text-indigo-600 font-bold">$ {totalCost.toFixed(2)}</h6>
         </div>
       </div>
     </main>

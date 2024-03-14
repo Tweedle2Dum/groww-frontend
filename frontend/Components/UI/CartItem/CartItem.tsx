@@ -23,7 +23,7 @@ function CartItem(props: Props) {
 
         <div className="content-details ml-auto space-y-2">
           <h5 className=" font-semibold">${props.price}</h5>
-          <h6 className=" font-semibold">QTY: <span className=" text-sky-600">{props.quantity}</span></h6>
+          <h6 className=" font-semibold">QTY: <span className=" text-indigo-600">{props.quantity}</span></h6>
         </div>
         
       </div>

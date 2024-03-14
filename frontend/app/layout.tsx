@@ -21,9 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <AppProvider>
-        <body className={font.className + ' px-4 md:px-20 md:pb-20'}>{children}</body>
-      </AppProvider>
+      <body
+        className={font.className + " px-4 md:px-20 md:pb-20 bg-primary-color"}
+      >
+        <AppProvider>{children}</AppProvider>
+      </body>
     </html>
   );
 }

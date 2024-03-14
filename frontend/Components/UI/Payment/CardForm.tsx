@@ -1,14 +1,17 @@
+import { CardSchema } from "@/Types/types";
 import React from "react";
+import { useForm } from "react-hook-form";
 
 type Props = {};
-
+type FormData = CardSchema;
 function CardForm({}: Props) {
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
   return (
     <form className="  flex items-center gap-4  flex-wrap">
       <label htmlFor="card-number-input " className="sr-only">
         Card number:
       </label>
-      <div className="relative flex-1 min-w-[250px]">
+      <div className="relative flex-1 min-w-[200px] max-w-[400px]">
         <input
           style={{ color: "black" }}
           type="text"
@@ -20,7 +23,7 @@ function CardForm({}: Props) {
         />
       </div>
       <div className="flex gap-4 my-4 flex-wrap">
-        <div className="relative max-w-sm col-span-2">
+        <div className="relative col-span-2">
           <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
             <svg
               className="w-4 h-4 text-gray-500 dark:text-gray-400"
@@ -39,7 +42,7 @@ function CardForm({}: Props) {
             style={{ color: "black" }}
             id="card-expiration-input"
             type="text"
-            className=" sm:w-[200px] flex-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  ps-10 p-2.5  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className=" w-full sm:max-w-[400px] min-w-[200px] flex-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  ps-10 p-2.5  dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Expiry MM/YY"
             required
           />
@@ -53,7 +56,7 @@ function CardForm({}: Props) {
             type="number"
             id="cvv-input"
             aria-describedby="helper-text-explanation"
-            className="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5   dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="w-full  sm:max-w-[400px] min-w-[200px] bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5   dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="CVV"
             required
           />

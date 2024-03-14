@@ -46,7 +46,7 @@ function Steps({ steps, currentStep }: Props) {
   };
 
   return (
-    <div className="flex items-center justify-center w-full space-y-4 lg:space-y-0">
+    <div className="flex items-center justify-center w-full space-y-4 lg:space-y-0" style={{}}> 
       {steps.map((step, index) => (
         <motion.div
           key={index + 1}

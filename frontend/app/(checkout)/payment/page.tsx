@@ -6,6 +6,7 @@ import Summary from "@/Components/UI/Summary/Summary";
 import PaymentModule from "@/Components/Modules/PaymentModule/PaymentModule";
 import { useRouter } from "next/navigation";
 import Loader from "@/Components/UI/Loader/Loader";
+import { useTheme } from "@/Components/Providers/ThemeProvider";
 
 export default function Page() {
   const cart = useGetCart();
@@ -15,6 +16,8 @@ export default function Page() {
     return <><Loader alignment="text-center"/></>;
   }
   if (!cart.data) return null;
+
+  const theme = useTheme()
 
   return (
     <main className=" flex flex-wrap gap-6  justify-between  rounded-lg relative">

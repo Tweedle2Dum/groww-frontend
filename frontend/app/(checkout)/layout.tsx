@@ -3,6 +3,7 @@ import Steps from "@/Components/UI/Steps/Steps";
 import Header from "@/Components/UI/Header/Header";
 import { Metadata } from "next";
 import { usePathname } from "next/navigation";
+import { useTheme } from "@/Components/Providers/ThemeProvider";
 
 export default function CheckoutLayout({
   children,
@@ -16,8 +17,8 @@ export default function CheckoutLayout({
     { name: "Confirmation", path: "/confirmation" },
   ];
   return (
-    <>
-      <div className="pt-10">
+    <div className="px-4 md:px-20 md:pb-20 bg-primary-color" >
+      <div className="pt-10" >
         {" "}
         <Header />
       </div>
@@ -25,8 +26,8 @@ export default function CheckoutLayout({
         <nav className=" mt-4 sm:mt-10 flex justify-center items-center mb-10 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] py-4 px-10 rounded-xl">
           <Steps steps={steps} currentStep={pathName} />
         </nav>
-        <main>{children}</main>
+        <main style={{}}>{children}</main>
       </div>
-    </>
+    </div>
   );
 }

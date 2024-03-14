@@ -1,7 +1,9 @@
 "use client";
 import React, {
   createContext,
+  Dispatch,
   ReactNode,
+  SetStateAction,
   useContext,
   useEffect,
   useState,
@@ -14,10 +16,11 @@ import Loader from "../UI/Loader/Loader";
 
 // Create a context for the theme
 interface ThemeContextType {
-  theme: ThemeData;
+  theme: ThemeData ;
   merchantName: string;
   merchantLogo: string;
-  loading: boolean; // Add loading state
+  setWhitelabelingEnabled: Dispatch<SetStateAction<boolean>>;
+  isWhiteLabelling : boolean ;
 }
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
@@ -31,7 +34,8 @@ export const useTheme = () => {
 };
 
 export default function ThemeProvider({ children }: { children: ReactNode }) {
-  const [loading, setLoading] = useState(true); // Track loading state
+  const [loading, setLoading] = useState(true); 
+  const [isWhitelabelingEnabled, setIsWhitelabelingEnabled] = useState(false); 
   const themeData = useThemeData();
 
   const defaultThemeData: ThemeApiResponse = {
@@ -68,14 +72,15 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
       </div>
     );
   }
-
+  
   return (
     <ThemeContext.Provider
       value={{
         theme: mergedThemeData.theme,
         merchantName: mergedThemeData.merchantName,
         merchantLogo: mergedThemeData.merchantLogo,
-        loading,
+        setWhitelabelingEnabled:setIsWhitelabelingEnabled , 
+        isWhiteLabelling:isWhitelabelingEnabled
       }}
     >
       {children}

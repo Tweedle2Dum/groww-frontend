@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import AppProvider from "@/Components/Providers/AppProvider";
+import { useTheme } from "@/Components/Providers/ThemeProvider";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -22,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={font.className + " px-4 md:px-20 md:pb-20 bg-primary-color"}
+        className={font.className}
       >
         <AppProvider>{children}</AppProvider>
       </body>

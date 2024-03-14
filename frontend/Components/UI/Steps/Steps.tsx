@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 type Step = {
   name: string;
@@ -29,11 +30,30 @@ function Steps({ steps, currentStep }: Props) {
     heading: "text-gray-900",
   };
 
+  const stepVariants = {
+    active: {
+      scale: 1.1,
+    },
+    inactive: {
+      scale: 1,
+    },
+  };
+
+  const transition = {
+    type: "spring",
+    stiffness: 200,
+    damping: 20,
+  };
+
   return (
-    <div className=" flex items-center justify-center w-full space-y-4 lg:space-y-0">
+    <div className="flex items-center justify-center w-full space-y-4 lg:space-y-0">
       {steps.map((step, index) => (
-        <div
+        <motion.div
           key={index + 1}
+          initial="inactive"
+          animate={step.path === currentStep ? "active" : "inactive"}
+          variants={stepVariants}
+          transition={transition}
           className={`lg:flex-[0.25] max-w-[300px] mx-auto md:flex items-center  ${
             index + 1 === steps.findIndex((s) => s.path === currentStep) + 1
               ? ""
@@ -48,18 +68,20 @@ function Steps({ steps, currentStep }: Props) {
               getStepStyles(step.path).background
             }`}
           >
-            <span
+            <motion.span
               className={`w-8 h-8 rounded-full flex justify-center items-center mr-3 text-sm lg:w-10 lg:h-10 ${
                 getStepStyles(step.path).circle
               } ${getStepStyles(step.path).circleText}`}
             >
               {index + 1 < 10 ? `0${index + 1}` : index + 1}
-            </span>
-            <h4 className={`text-sm ${getStepStyles(step.path).heading}`}>
+            </motion.span>
+            <motion.h4
+              className={`text-sm ${getStepStyles(step.path).heading}`}
+            >
               {step.name}
-            </h4>
+            </motion.h4>
           </a>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

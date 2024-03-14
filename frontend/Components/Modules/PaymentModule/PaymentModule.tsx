@@ -1,5 +1,5 @@
-'use client'
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import CardForm from "../../UI/Payment/CardForm";
 import UPIForm from "../../UI/Payment/UPIForm";
 
@@ -12,7 +12,9 @@ function PaymentModule(props: Props) {
   const [expandedMethod, setExpandedMethod] = useState<string | null>(null);
 
   const toggleMethod = (method: string) => {
-    setExpandedMethod(prevMethod => prevMethod === method ? null : method);
+    setExpandedMethod((prevMethod) =>
+      prevMethod === method ? null : method
+    );
   };
 
   const handleInputClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -29,16 +31,21 @@ function PaymentModule(props: Props) {
           }`}
           onClick={() => toggleMethod(method)}
         >
-          <h3
-            className={`text-xl`}
-          >
-            {method}
-          </h3>
-          {expandedMethod === method && (
-            <div className="w-full" onClick={handleInputClick}>
-              {method === "CARDS" ? <CardForm /> : <UPIForm />}
-            </div>
-          )}
+          <h3 className={`text-xl`}>{method}</h3>
+          <AnimatePresence>
+            {expandedMethod === method && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                className="w-full overflow-hidden"
+                onClick={handleInputClick}
+              >
+                {method === "CARDS" ? <CardForm /> : <UPIForm />}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       ))}
     </main>

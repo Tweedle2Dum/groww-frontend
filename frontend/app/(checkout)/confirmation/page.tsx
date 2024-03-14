@@ -1,8 +1,8 @@
-"use client";
-
+'use client'
 import useGetCart from "@/Components/Hooks/APIs/Cart/useGetCart";
 import CartItem from "@/Components/UI/CartItem/CartItem";
 import Loader from "@/Components/UI/Loader/Loader";
+import { motion, AnimatePresence } from "framer-motion";
 
 type Props = {};
 
@@ -51,32 +51,24 @@ export default function Page({}: Props) {
               </button>
             </div>
             <div className="w-full px-3 min-[400px]:px-6 space-y-6 pb-4">
-              {cart.data.products.map((product) => (
-                <>
-                  <CartItem {...product} key={product.id} />
-                </>
-              ))}
+              <AnimatePresence>
+                {cart.data.products.map((product) => (
+                  <motion.div
+                    className="pt-4"
+                    key={product.id}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <CartItem {...product} />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
             </div>
             <div className="w-full border-t border-gray-200 px-6 flex flex-col lg:flex-row items-center justify-between ">
               <div className="flex flex-col sm:flex-row items-center max-lg:border-b border-gray-200">
-                <button className="flex outline-0 py-6 sm:pr-6  sm:border-r border-gray-200 whitespace-nowrap gap-2 items-center justify-center font-semibold group text-lg text-black bg-white transition-all duration-500 hover:text-indigo-600">
-                  <svg
-                    className="stroke-black transition-all duration-500 group-hover:stroke-indigo-600"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 22 22"
-                    fill="none"
-                  >
-                    <path
-                      d="M5.5 5.5L16.5 16.5M16.5 5.5L5.5 16.5"
-                      stroke=""
-                      stroke-width="1.6"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                  Cancel Order
-                </button>
+               {/* MODE OF PAYMENT */}
               </div>
               <p className="font-semibold text-lg text-black py-6">
                 Total Price:{" "}

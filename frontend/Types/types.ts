@@ -1,5 +1,5 @@
 import {z} from 'zod';
-import { cardSchema } from './schema';
+import { UpiIdSchema, cardSchema } from './schema';
 
 export type Product = {
     id: number;
@@ -18,3 +18,5 @@ export type StoreData = {
   
  
 export type CardSchema = z.infer<typeof cardSchema >
+
+export type upiIdSchema = z.infer<typeof UpiIdSchema>;

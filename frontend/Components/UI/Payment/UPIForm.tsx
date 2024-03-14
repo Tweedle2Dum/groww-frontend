@@ -1,28 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 import { UpiIdSchema } from '@/Types/schema'; // Assuming you have a schema for UPI ID validation
 import Button from '../Button/Button';
 
+
+type Props = {
+  onError: (error: boolean) => void;
+};
 type FormData = {
   upiId: string;
 };
 
-export default function UPIForm() {
+export default function UPIForm({onError}:Props) {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(UpiIdSchema),
-    mode: 'onChange',
+    mode: 'all',
   });
 
   const onSubmit = (data: FormData) => {
     console.log(data);
     // Perform form submission logic here
   };
+
+  useEffect(() => {
+    onError(Object.keys(errors).length > 0);
+  }, [errors, onError]);
+
+
+  console.log(errors)
   
 
   return (

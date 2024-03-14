@@ -5,20 +5,24 @@ import UPIForm from "../../UI/Payment/UPIForm";
 
 type Props = {
   paymentMethods: string[];
+  onError: (error: boolean) => void; // Callback function to handle errors
 };
 
 function PaymentModule(props: Props) {
-  const { paymentMethods } = props;
+  const { paymentMethods,onError } = props;
   const [expandedMethod, setExpandedMethod] = useState<string | null>(null);
+  const [formErrors, setFormErrors] = useState<{ [key: string]: boolean }>({});
 
   const toggleMethod = (method: string) => {
-    setExpandedMethod((prevMethod) =>
-      prevMethod === method ? null : method
-    );
+    setExpandedMethod((prevMethod) => (prevMethod === method ? null : method));
   };
 
   const handleInputClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation(); // Stop event propagation
+  };
+
+  const handleFormError = (error: boolean) => {
+    onError(error); // Call the onError callback function with the error status
   };
 
   return (
@@ -42,7 +46,15 @@ function PaymentModule(props: Props) {
                 className="w-full overflow-hidden"
                 onClick={handleInputClick}
               >
-                {method === "CARDS" ? <CardForm /> : <UPIForm />}
+                {method === "CARDS" ? (
+                  <CardForm
+                    onError={(error) => handleFormError( error)}
+                  />
+                ) : (
+                  <UPIForm
+                    onError={(error) => handleFormError(error)}
+                  />
+                )}
               </motion.div>
             )}
           </AnimatePresence>

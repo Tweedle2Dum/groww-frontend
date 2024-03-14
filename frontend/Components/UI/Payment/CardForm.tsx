@@ -3,11 +3,14 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { cardSchema } from "@/Types/schema";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
-type Props = {};
+type Props = {
+  onError: (error: boolean) => void;
+};
 type FormData = CardSchema;
 
-function CardForm({}: Props) {
+function CardForm({onError}: Props) {
   const {
     register,
     handleSubmit,
@@ -20,6 +23,10 @@ function CardForm({}: Props) {
   const onSubmit = (data: FormData) => {
     console.log(data);
   };
+
+  useEffect(() => {
+    onError(Object.keys(errors).length > 0);
+  }, [errors, onError]);
 
   return (
     <form
